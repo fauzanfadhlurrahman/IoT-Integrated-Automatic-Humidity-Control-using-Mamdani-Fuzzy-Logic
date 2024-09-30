@@ -1,0 +1,16 @@
+var sheet_id = 
+"1LpSppNxhZKK9EItXt4CGCrfyJIwShE7yuLNonhdNyys";
+var sheet_name = "esp32 datalogger";
+function doGet(e){
+var ss = SpreadsheetApp.openById(sheet_id);
+var sheet = ss.getSheetByName(sheet_name);
+var hum = String(e.parameter.hum);
+var date = String(e.parameter.date);
+var temp = String(e.parameter.temp);
+var humstate = String (e.parameter.humstate);
+var dehumstate = String (e.parameter.dehumstate);
+var setA = String (e.parameter.setA);
+var setB = String (e.parameter.setB);
+var air = String(e.parameter.air);
+sheet.appendRow([date,hum,temp,humstate,dehumstate,air,
+setA,setB]);
